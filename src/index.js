@@ -1,12 +1,28 @@
 import "./styles.css";
 
-// const onClickAdd = () => {
-//   // テキストボックスの値を取得し、初期化する
-//   const inputText = document.getElementById("add-text").value;
-//   document.getElementById("add-text").value = "";
+const onClickAdd = () => {
+  // テキストボックスの値を取得し、初期化する
+  const inputText = document.getElementById("add-text").value;
+  document.getElementById("add-text").value = "";
 
-//   createIncompleteList(inputText);
-// };
+  // li 生成
+  const li = document.createElement("li");
+  li.className = "list-row";
+
+  // div 生成
+  const p = document.createElement("p");
+  p.innerText = inputText;
+
+  // li タグの子要素に各要素を設定
+  li.appendChild(p);
+
+  // 未完了リストに追加
+  document.getElementById("incomplete-list").appendChild(li);
+
+  // p.appendChild(backButton);
+
+  //   createIncompleteList(inputText);
+};
 
 // // 未完了リストから指定の要素を削除
 // const delateFromInvompleteList = (target) => {
@@ -15,13 +31,6 @@ import "./styles.css";
 
 // // 未完了リストに追加する関数
 // const createIncompleteList = (text) => {
-//   // li 生成
-//   const li = document.createElement("li");
-//   li.className = "list-row";
-
-//   // div 生成
-//   const div = document.createElement("div");
-//   div.innerText = text;
 
 //   // button（完了）タグ生成
 //   const completeButton = document.createElement("button");
@@ -55,10 +64,6 @@ import "./styles.css";
 //       createIncompleteList(text);
 //     });
 
-//     // div タグの子要素に各要素を設定
-//     addTarget.appendChild(li);
-//     addTarget.appendChild(backButton);
-
 //     // 完了リストに追加
 //     document.getElementById("complete-list").appendChild(addTarget);
 //   });
@@ -79,6 +84,6 @@ import "./styles.css";
 //   li.appendChild(deleteButton);
 // };
 
-// document
-//   .getElementById("add-button")
-//   .addEventListener("click", () => onClickAdd());
+document
+  .getElementById("add-button")
+  .addEventListener("click", () => onClickAdd());
